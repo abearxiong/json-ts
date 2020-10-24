@@ -13,7 +13,8 @@ export interface JsonTsOptions {
 
 export const defaults = {
     prefix: "",
-    rootName: "RootObject"
+    rootName: "Root",
+    flow: true,
 };
 
 export function json2ts(validJsonString: string, options: JsonTsOptions = {}): string {
