@@ -30,7 +30,6 @@
     "src",
     "_.js"
   ],
-  "repository": "shakyshane/json-ts",
   "main": "dist/index.js",
   "devDependencies": {
     "@types/node": "^14.14.2",
