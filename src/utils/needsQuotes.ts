@@ -64,7 +64,7 @@ function needQuotes(value) {
   };
 }
 
-export { needQuotes };
+export const needsQuotes = needQuotes;
 
 function isNumericLiteral(string, number) {
   // Consider: empty string, `2e2`, `010`, ` 010` (leading space), `1.23`, `.23`, `+1`, `-0`, etc.
