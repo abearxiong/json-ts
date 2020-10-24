@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 import {JsonTsOptions} from "./index";
-import needsQuotes = require("needsquotes");
+import { needsQuotes } from "./utils";
 
 export interface ParsedNode {
     kind: ts.SyntaxKind

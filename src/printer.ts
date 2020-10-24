@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 import {InterfaceNode, kindMap, log, MemberNode, namedProp} from "./transformer";
-import needsQuotes = require('needsquotes');
+import { needsQuotes } from "./utils";
 import {JsonTsOptions} from "./index";
 
 export function print(interfaceNodes, inputKind: ts.SyntaxKind, options: JsonTsOptions): string {

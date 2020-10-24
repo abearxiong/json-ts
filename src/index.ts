@@ -12,7 +12,7 @@ export interface JsonTsOptions {
 }
 
 export const defaults = {
-    prefix: "I",
+    prefix: "",
     rootName: "RootObject"
 };
 
@@ -22,12 +22,15 @@ export function json2ts(validJsonString: string, options: JsonTsOptions = {}): s
         ...options
     };
     const {stack, inputKind} = parse(validJsonString, mergedOptions);
+    console.log('stack', stack);
+    console.log('inputKind', inputKind, ts.SyntaxKind[inputKind]);
     switch (inputKind) {
         case ts.SyntaxKind.ArrayLiteralExpression:
         case ts.SyntaxKind.ObjectLiteralExpression: {
             const transformed = transform(stack, mergedOptions);
             const flattened = collapseInterfaces(transformed);
             const printed = print(flattened, inputKind, mergedOptions);
+            console.log('printed', printed);
             return printed;
         }
         default: {

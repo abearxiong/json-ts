@@ -121,7 +121,8 @@ function modifyMembers(interfaceMembers, currentMembers) {
                             return;
                         }
                         const memberNodes = [existingMember.type, mem.type];
-                        updatedMember.type = ts.createUnionOrIntersectionTypeNode(ts.SyntaxKind.UnionType, memberNodes);
+                        // updatedMember.type = ts.createUnionOrIntersectionTypeNode(ts.SyntaxKind.UnionType, memberNodes);
+                        updatedMember.type = ts.createUnionTypeNode(memberNodes);
                         interfaceMembers[existingIndex] = updatedMember;
                     }
                 }

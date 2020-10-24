@@ -18,7 +18,7 @@ const defaults = {
 };
 
 // merged options with defaults
-const options = {
+const options: any = {
     ...defaults,
     ...argv
 };
